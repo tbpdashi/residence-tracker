@@ -26,6 +26,5 @@ public class RemarkCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         throw new CommandException(MESSAGE_NOT_IMPLEMENTED_YET);
-
     }
 }
