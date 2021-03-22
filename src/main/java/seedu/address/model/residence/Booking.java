@@ -2,8 +2,8 @@ package seedu.address.model.residence;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 import seedu.address.model.person.Name;
