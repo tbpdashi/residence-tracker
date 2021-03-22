@@ -1,14 +1,13 @@
 package seedu.address.model.residence;
 
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Phone;
-
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
-
 import java.util.Objects;
+
+import seedu.address.model.person.Name;
+import seedu.address.model.person.Phone;
 
 /**
  * Represents a Booking in the address book.
