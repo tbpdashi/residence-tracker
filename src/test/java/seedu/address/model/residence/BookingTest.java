@@ -4,19 +4,19 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 
+import java.time.LocalDate;
+
 import org.junit.jupiter.api.Test;
 
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 
-import java.time.LocalDate;
-
 public class BookingTest {
 
-    Name validName = new Name("John");
-    Phone validPhone = new Phone("91234567");
-    LocalDate validStart = LocalDate.of(2021, 3, 22);
-    LocalDate validEnd = LocalDate.of(2021, 3, 25);
+    private Name validName = new Name("John");
+    private Phone validPhone = new Phone("91234567");
+    private LocalDate validStart = LocalDate.of(2021, 3, 22);
+    private LocalDate validEnd = LocalDate.of(2021, 3, 25);
 
     @Test
     public void constructor_null_throwsNullPointerException() {
@@ -50,16 +50,8 @@ public class BookingTest {
         // null booking
         assertThrows(NullPointerException.class, () -> Booking.isValidBooking(null));
 
-        /*// invalid names
-        assertFalse(Booking.isValidBooking(new Booking(new Name(""), validPhone, validStart, validEnd))); // empty string
-        assertFalse(Booking.isValidBooking(new Booking(new Name(" "), validPhone, validStart, validEnd))); // spaces only
-
-        // invalid phones
-        assertFalse(Booking.isValidBooking(new Booking(validName, new Phone("91"), validStart, validEnd))); // empty string
-        assertFalse(Booking.isValidBooking(new Booking(validName, new Phone("abc123"), validStart, validEnd))); // spaces only*/
-
-        // invalid dates
-        assertFalse(Booking.isValidBooking(new Booking(validName, validPhone, validEnd, validStart))); // start date after end date
+        // invalid dates - start date after end date
+        assertFalse(Booking.isValidBooking(new Booking(validName, validPhone, validEnd, validStart)));
 
         // valid bookings
         assertTrue(Booking.isValidBooking(new Booking(validName, validPhone, validStart, validEnd)));
