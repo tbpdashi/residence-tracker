@@ -2,9 +2,9 @@ package seedu.address.testutil;
 
 import java.time.LocalDate;
 
-import seedu.address.model.residence.Booking;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
+import seedu.address.model.residence.Booking;
 
 /**
  * A utility class to help with building Booking objects.
