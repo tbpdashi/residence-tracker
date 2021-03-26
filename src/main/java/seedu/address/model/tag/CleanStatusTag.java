@@ -28,7 +28,6 @@ public class CleanStatusTag {
      */
     public CleanStatusTag(String cleanStatus) {
         requireNonNull(cleanStatus);
-        System.out.println("TESTING FOR CLEAN STATUS: " + cleanStatus);
         checkArgument(isValidCleanStatusTag(cleanStatus), MESSAGE_CONSTRAINTS);
         if (cleanStatus.equalsIgnoreCase("y")) {
             this.cleanStatus = CLEAN;

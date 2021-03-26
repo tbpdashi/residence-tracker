@@ -21,7 +21,7 @@
                   <padding>
                       <Insets bottom="5" left="15" right="5" top="5" />
                   </padding>
-                  <HBox alignment="CENTER_LEFT" spacing="5">
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
                       <Label fx:id="id" styleClass="cell_big_label">
                           <minWidth>
                               <!-- Ensures that the label text is never truncated -->
@@ -34,9 +34,13 @@
                   <FlowPane fx:id="tags" />
                   <Label fx:id="address" styleClass="cell_small_label" text="\$address" />
               </VBox>
-            <FlowPane orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
+            <FlowPane orientation="VERTICAL" prefHeight="200.0" prefWidth="350.0">
                <children>
-                     <Label fx:id="bookingList" styleClass="cell_small_label" text="\\$bookingList" />
+                     <Label fx:id="bookingList" styleClass="cell_small_label" text="\\$bookingList">
+                        <minWidth>
+                            <Region fx:constant="USE_PREF_SIZE" />
+                        </minWidth>
+                     </Label>
                </children>
             </FlowPane>
          </children>
