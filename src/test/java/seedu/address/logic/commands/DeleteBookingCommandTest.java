@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.showResidenceAtIndex;
-
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_BOOKING;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_RESIDENCE;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_BOOKING;
@@ -48,15 +47,19 @@ public class DeleteBookingCommandTest {
 
     @Test
     public void equals() {
-        DeleteBookingCommand deleteBookingFirstCommand = new DeleteBookingCommand(INDEX_FIRST_RESIDENCE, INDEX_FIRST_BOOKING);
-        DeleteBookingCommand deleteBookingSecondCommand = new DeleteBookingCommand(INDEX_FIRST_RESIDENCE, INDEX_SECOND_BOOKING);
-        DeleteBookingCommand deleteBookingThirdCommand = new DeleteBookingCommand(INDEX_SECOND_RESIDENCE, INDEX_FIRST_BOOKING);
+        DeleteBookingCommand deleteBookingFirstCommand =
+            new DeleteBookingCommand(INDEX_FIRST_RESIDENCE, INDEX_FIRST_BOOKING);
+        DeleteBookingCommand deleteBookingSecondCommand =
+            new DeleteBookingCommand(INDEX_FIRST_RESIDENCE, INDEX_SECOND_BOOKING);
+        DeleteBookingCommand deleteBookingThirdCommand =
+            new DeleteBookingCommand(INDEX_SECOND_RESIDENCE, INDEX_FIRST_BOOKING);
 
         // same object -> returns true
         assertTrue(deleteBookingFirstCommand.equals(deleteBookingFirstCommand));
 
         // same values -> returns true
-        DeleteBookingCommand deleteBookingFirstCommandCopy = new DeleteBookingCommand(INDEX_FIRST_RESIDENCE, INDEX_FIRST_BOOKING);
+        DeleteBookingCommand deleteBookingFirstCommandCopy =
+            new DeleteBookingCommand(INDEX_FIRST_RESIDENCE, INDEX_FIRST_BOOKING);
         assertTrue(deleteBookingFirstCommand.equals(deleteBookingFirstCommandCopy));
 
         // different types -> returns false
